@@ -28,4 +28,13 @@ class Page(models.Model):
     def __str__(self):
         return self.title
 
+    def clean(self):
+        cleaned_data = self.cleaned_data
+        url = cleaned_data.get('url')
+
+        if url and not url.startswith('htpp://'):
+            url = 'htpp://' + url
+            cleaned_data['url'] = url
+            return cleaned_data
+
 

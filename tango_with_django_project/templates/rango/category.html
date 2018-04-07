@@ -1,11 +1,11 @@
 <!DOCTYPE html>
 <head>
-    <title>Rango</title>
+    <title>Rango - Category</title>
 </head>
 <body>
+    <h1>{{ category.name }}</h1>
     <div>
         {% if category %}
-            <h1>{{ category.name }}</h1>
             {% if pages %}
                 <ul>
                     {% for page in pages %}
@@ -18,6 +18,12 @@
         {% else %}
         The specified category does not exits !
         {% endif %}
+    </div>
+    <div>
+        {% if category %}
+        <a href="/rango/category/{{category.slug}}/add_page/">Add Page</a><br />
+        {% endif %}
+        <a href="/rango/">Index</a><br />
     </div>
 </body>
 </html>
