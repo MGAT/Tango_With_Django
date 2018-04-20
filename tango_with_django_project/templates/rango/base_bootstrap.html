@@ -51,16 +51,6 @@
                     About
                 </a>
             </li>
-            <li class="nav-item">
-                <a href="{% url 'registration_register' %}" class="nav-link">
-                    Register Here
-                </a>
-            </li>
-            <li class="nav-item">
-                <a href="{% url 'auth_login' %}" class="nav-link">
-                    Login
-                </a>
-            </li>
             {% if user.is_authenticated %}
             <li class="nav-item">
                 <a href="{% url 'restricted' %}" class="nav-link">
@@ -77,7 +67,16 @@
                     Logout
                 </a>
             </li>
-
+            <li class="nav-item">
+                <a href="{% url 'registration_register' %}" class="nav-link">
+                    Register Here
+                </a>
+            </li>
+            <li class="nav-item">
+                <a href="{% url 'auth_login' %}" class="nav-link">
+                    Login
+                </a>
+            </li>
             {% endif %}
         </ul>
     </div>
@@ -114,4 +113,3 @@
     </script>
 </body>
 </html>
-
