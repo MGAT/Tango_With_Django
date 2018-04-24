@@ -61,6 +61,7 @@
                     Login
                 </a>
             </li>
+
             {% if user.is_authenticated %}
             <li class="nav-item">
                 <a href="{% url 'restricted' %}" class="nav-link">
@@ -75,6 +76,16 @@
             <li class="nav-item">
                 <a href="{% url 'auth_logout' %}?next=/rango/" class="nav-link">
                     Logout
+                </a>
+            </li>
+            <li class="nav-item">
+                <a href="{% url 'profile' user.username %}" class="nav-link">
+                    Profile
+                </a>
+            </li>
+            <li class="nav-item">
+                <a href="{% url 'list_profiles' %}" class="nav-link">
+                    List Profiles
                 </a>
             </li>
 
